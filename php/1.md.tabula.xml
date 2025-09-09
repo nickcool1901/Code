@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schedule>
+  <game>
+    <date>2025-06-10</date>
+    <time>18:00:00</time>
+    <arena>
+      <name>Riga Arena</name>
+      <city>Riga</city>
+    </arena>
+    <team>
+      <name>Riga Lions</name>
+      <country>Latvia</country>
+      <coach>John Smith</coach>
+    </team>
+    <team>
+      <name>Stockholm Vikings</name>
+      <country>Sweden</country>
+      <coach>Karl Johansson</coach>
+    </team>
+  </game>
+  <game>
+    <date>2025-06-11</date>
+    <time>19:30:00</time>
+    <arena>
+      <name>Stockholm Ice Hall</name>
+      <city>Stockholm</city>
+    </arena>
+    <team>
+      <name>Helsinki Bears</name>
+      <country>Finland</country>
+      <coach>Mikko Korhonen</coach>
+    </team>
+    <team>
+      <name>Oslo Icebreakers</name>
+      <country>Norway</country>
+      <coach>Erik Hansen</coach>
+    </team>
+  </game>
+  <game>
+    <date>2025-06-12</date>
+    <time>20:00:00</time>
+    <arena>
+      <name>Helsinki Ice Dome</name>
+      <city>Helsinki</city>
+    </arena>
+    <team>
+      <name>Berlin Eagles</name>
+      <country>Germany</country>
+      <coach>Thomas Müller</coach>
+    </team>
+    <team>
+      <name>Prague Knights</name>
+      <country>Czech Republic</country>
+      <coach>Jan Novak</coach>
+    </team>
+  </game>
+  <game>
+    <date>2025-06-13</date>
+    <time>17:45:00</time>
+    <arena>
+      <name>Riga Arena</name>
+      <city>Riga</city>
+    </arena>
+    <team>
+      <name>Warsaw Wolves</name>
+      <country>Poland</country>
+      <coach>Adam Kowalski</coach>
+    </team>
+    <team>
+      <name>Vienna Capitals</name>
+      <country>Austria</country>
+      <coach>Franz Schneider</coach>
+    </team>
+  </game>
+  <game>
+    <date>2025-06-14</date>
+    <time>19:00:00</time>
+    <arena>
+      <name>Stockholm Ice Hall</name>
+      <city>Stockholm</city>
+    </arena>
+    <team>
+      <name>Stockholm Vikings</name>
+      <country>Sweden</country>
+      <coach>Karl Johansson</coach>
+    </team>
+    <team>
+      <name>Helsinki Bears</name>
+      <country>Finland</country>
+      <coach>Mikko Korhonen</coach>
+    </team>
+  </game>
+  <game>
+    <date>2025-06-15</date>
+    <time>18:30:00</time>
+    <arena>
+      <name>Helsinki Ice Dome</name>
+      <city>Helsinki</city>
+    </arena>
+    <team>
+      <name>Oslo Icebreakers</name>
+      <country>Norway</country>
+      <coach>Erik Hansen</coach>
+    </team>
+    <team>
+      <name>Berlin Eagles</name>
+      <country>Germany</country>
+      <coach>Thomas Müller</coach>
+    </team>
+  </game>
+  <game>
+    <date>2025-06-16</date>
+    <time>21:00:00</time>
+    <arena>
+      <name>Riga Arena</name>
+      <city>Riga</city>
+    </arena>
+    <team>
+      <name>Prague Knights</name>
+      <country>Czech Republic</country>
+      <coach>Jan Novak</coach>
+    </team>
+    <team>
+      <name>Warsaw Wolves</name>
+      <country>Poland</country>
+      <coach>Adam Kowalski</coach>
+    </team>
+  </game>
+  <game>
+    <date>2025-06-17</date>
+    <time>16:00:00</time>
+    <arena>
+      <name>Stockholm Ice Hall</name>
+      <city>Stockholm</city>
+    </arena>
+    <team>
+      <name>Vienna Capitals</name>
+      <country>Austria</country>
+      <coach>Franz Schneider</coach>
+    </team>
+    <team>
+      <name>Riga Lions</name>
+      <country>Latvia</country>
+      <coach>John Smith</coach>
+    </team>
+  </game>
+  <game>
+    <date>2025-06-18</date>
+    <time>20:15:00</time>
+    <arena>
+      <name>Helsinki Ice Dome</name>
+      <city>Helsinki</city>
+    </arena>
+    <team>
+      <name>Stockholm Vikings</name>
+      <country>Sweden</country>
+      <coach>Karl Johansson</coach>
+    </team>
+    <team>
+      <name>Berlin Eagles</name>
+      <country>Germany</country>
+      <coach>Thomas Müller</coach>
+    </team>
+  </game>
+  <game>
+    <date>2025-06-19</date>
+    <time>19:45:00</time>
+    <arena>
+      <name>Riga Arena</name>
+      <city>Riga</city>
+    </arena>
+    <team>
+      <name>Helsinki Bears</name>
+      <country>Finland</country>
+      <coach>Mikko Korhonen</coach>
+    </team>
+    <team>
+      <name>Prague Knights</name>
+      <country>Czech Republic</country>
+      <coach>Jan Novak</coach>
+    </team>
+  </game>
+</schedule>

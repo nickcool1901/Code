@@ -1,0 +1,23 @@
+Telegram bots nodrošina ērtu kanālu pārvaldību, ļaujot lietotājiem pievienot, dzēst un veikt darbības ar kanāliem.
+
+Galvenās funkcijas:
+
+Kanālu pārvaldība:
+
+Pievienot kanālu – Saglabā jaunu kanālu sarakstā.
+
+Dzēst kanālu – Noņem izvēlēto kanālu no saraksta.
+
+Reklāmu pārvaldība:
+
+Sūtīt reklāmu – Nosūta jaunu reklāmu uz izvēlēto kanālu.
+
+Atkārtoti nosūtīt reklāmu – Pārsūta iepriekš sūtītu reklāmu.
+
+Noņemt reklāmu – Dzēš esošo reklāmu no kanāla.
+
+Pogu funkcionalitāte:
+
+"Atpakaļ" – Atgriežas atpakaļ.
+
+Neatbilstoša izvēle – Lietotājam tiek piedāvāta atkārtota izvēle kļūdas gadījumā.

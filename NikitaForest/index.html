@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style>
+      /* Стили для салюта */
+      .firework {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: red;
+        border-radius: 50%;
+        animation: explode 2s ease-out forwards;
+      }
+
+      @keyframes explode {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          transform: scale(2.5);
+          opacity: 0;
+        }
+      }
+    </style>
+  <script>
+function fireworks(event) {
+  const firework = document.createElement('span');
+  firework.classList.add('firework');
+  firework.style.left = event.pageX + 'px';
+  firework.style.top = event.pageY + 'px';
+  document.body.appendChild(firework);
+  setTimeout(() => {
+    firework.remove();
+  }, 1000);
+}
+  </script>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>nickcool</title>
+	<link rel="stylesheet" href="css/main.css">
+	<script src="libs/gsap/gsap.min.js" type="text/javascript" defer></script>
+	<script src="libs/gsap/ScrollTrigger.min.js" type="text/javascript" defer></script>
+	<script src="libs/gsap/ScrollSmoother.min.js" type="text/javascript" defer></script>
+	<script src="js/app.js" type="text/javascript" defer></script>
+
+	<script>
+		// Получаем ссылки на кнопку и счетчик
+const myButton = document.getElementById('myButton');
+const counter = document.getElementById('counter');
+
+// Устанавливаем начальное значение счетчика
+let count = 0;
+
+// Обрабатываем событие клика на кнопке
+button.addEventListener('click', () => {
+  // Увеличиваем значение счетчика и обновляем текст в элементе счетчика
+  count++;
+  counter.textContent = count;
+  counter.innerHTML = count;
+});
+	</script>
+	
+
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a>Menu</a>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="index1.html">About me</a></li>
+					<li><a href="index2.html" target="_blank">Contacts</a></li>
+				</ul>
+			</li>
+		</ul>
+		<button class="btnLogin-popup">Login</button>
+	</nav>
+	<div class="wrapper">
+		<div class="content">
+			<header class="main-header">
+				<div class="layers">
+					<button id="myButton" style="background-image: url(../img/flame.jpg);"><b></b></button>
+					<div class="layer__header">
+						<div class="layers__caption">Made by:</div>
+						<div class="layers__title">Nikita Kulakovs</div>
+						<div class="layers__title">2 LSP</div>
+					</div>
+					<div class="layer layers__base" style="background-image: url(img/layer-base.png);"></div>
+					<div class="layer layers__middle" style="background-image: url(img/layer-middle.png);"></div>
+					<div class="layer layers__front" style="background-image: url(img/layer-front.png);"></div>
+				</div>
+			</header>
+			<article class="main-article" style="background-image: url(img/dungeon.jpg);">
+				<div class="main-article__content">
+					<div class="card">
+						<div class="card-background"></div>
+						<div class="card-content">
+							
+					<h2 class="main-article__header">To be continued</h2>
+					<p class="main-article__paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis error provident dignissimos facere. Repellendus tempore autem qui! Quia magnam tempora esse id necessitatibus corrupti mollitia expedita sapiente cum rerum, ut dicta laboriosam!</p>
+					</div>
+				</div>
+
+				<button class="button__white" style="text-align: center; font-size: 15px;" onclick="fireworks(event)">Click me</button>
+
+				</div>
+
+				<div class="copy">© Nikita Kulakovs</div>
+
+			</article>
+		</div>
+	</div>
+
+
+	<script>
+		const button = document.getElementById('myButton');
+		// Устанавливаем случайные начальные координаты для кнопки
+		button.style.top = Math.random() * window.innerHeight + 'px';
+		button.style.left = Math.random() * window.innerWidth + 'px';
+		// Обрабатываем событие клика на кнопке
+		button.addEventListener('click', () => {
+			// Генерируем случайные координаты для кнопки
+			const x = Math.random() * window.innerWidth;
+			const y = Math.random() * window.innerHeight;
+			// Устанавливаем новые координаты кнопки
+			button.style.top = y + 'px';
+			button.style.left = x + 'px';
+		});
+			</script>
+
+</body>
+</html>
