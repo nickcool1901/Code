@@ -19,10 +19,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Validate HTML
-        uses: Cyb3r-Jak3/html5validator-action@v1
-        with:
-          root: NikitaForest
+      - name: Install HTMLHint
+        run: npm i -g htmlhint
+
+      - name: Run HTMLHint
+        run: |
+          htmlhint "NikitaForest/**/*.html"
 
       - name: Check broken links
         uses: lycheeverse/lychee-action@v1
