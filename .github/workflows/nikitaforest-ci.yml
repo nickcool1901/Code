@@ -1,0 +1,30 @@
+name: NikitaForest CI
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - "NikitaForest/**"
+      - ".github/workflows/nikitaforest-ci.yml"
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - "NikitaForest/**"
+
+jobs:
+  html-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate HTML
+        uses: Cyb3r-Jak3/html5validator-action@v7
+        with:
+          root: NikitaForest
+
+      - name: Check broken links
+        uses: lycheeverse/lychee-action@v1
+        with:
+          args: NikitaForest/**/*.html

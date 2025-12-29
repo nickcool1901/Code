@@ -1,0 +1,14 @@
+# macOS garbage
+.DS_Store
+._*
+
+# Visual Studio / .NET
+.vs/
+**/.vs/
+bin/
+obj/
+*.user
+*.suo
+
+# Logs
+*.log
