@@ -275,7 +275,7 @@ ul li:hover ul li {
   transform: translateY(4px);
 }
 .floating-flame {
-	position: absolute;
+	position: fixed;
 	width: 95px;
 	height: 65px;
 	z-index: 150;
@@ -283,7 +283,8 @@ ul li:hover ul li {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
-	pointer-events: none;
+	pointer-events: auto;
+	cursor: pointer;
 	filter: drop-shadow(0 0 12px rgba(255, 119, 41, .7));
 }
 .card {
