@@ -22,6 +22,32 @@ body {
 	font-family: raleway_f, sans-serif;
 	line-height: 1.55;
 }
+.simple-page {
+	position: relative;
+	min-height: 100vh;
+	overflow-x: hidden;
+}
+.page-background {
+	position: fixed;
+	inset: 0;
+	background-size: cover;
+	background-position: center;
+	opacity: .6;
+	z-index: 0;
+}
+.page-shell {
+	position: relative;
+	z-index: 10;
+	padding: 96px 24px 160px;
+}
+@media (max-width: 768px) {
+	.page-shell {
+		padding: 88px 18px 140px;
+	}
+	.page-background {
+		opacity: .8;
+	}
+}
 .main-header {
 	position: relative;
 }
@@ -248,20 +274,17 @@ ul li:hover ul li {
   box-shadow: 3px 3px white;
   transform: translateY(4px);
 }
-#myButton {
-  position: absolute;
-  top: 75px;
-  left: 50px;
-	transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
-	z-index: 101;
-	background-color: transparent;
-	background-size: cover;
-	border:none;
+.floating-flame {
+	position: absolute;
 	width: 95px;
 	height: 65px;
-	color: red;
-	text-decoration: bold;
-	font-size: large;
+	z-index: 150;
+	background-image: url(../img/flame.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	pointer-events: none;
+	filter: drop-shadow(0 0 12px rgba(255, 119, 41, .7));
 }
 .card {
 	align-items:center;
@@ -285,4 +308,60 @@ ul li:hover ul li {
 }
 .card:active {
 	filter: blur(0); /* убрать степень размытия */
+}
+.site-footer {
+	position: relative;
+	z-index: 20;
+	background: linear-gradient(120deg, rgba(18, 34, 45, .9), rgba(9, 16, 24, .92));
+	border-top: 1px solid rgba(255, 255, 255, .08);
+	color: var(--text);
+	padding: 28px 24px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	flex-wrap: wrap;
+	overflow: hidden;
+}
+.site-footer__glow {
+	position: absolute;
+	inset: -45%;
+	background: radial-gradient(circle at 30% 40%, rgba(255, 149, 51, .28), transparent 45%), radial-gradient(circle at 70% 60%, rgba(87, 194, 255, .22), transparent 40%);
+	filter: blur(70px);
+	opacity: .9;
+	z-index: 0;
+	pointer-events: none;
+}
+.site-footer__brand {
+	font-weight: 900;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	z-index: 1;
+}
+.site-footer__links {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	flex-wrap: wrap;
+	z-index: 1;
+}
+.site-footer__links a {
+	color: var(--text);
+	text-decoration: none;
+	opacity: .85;
+	font-weight: 600;
+}
+.site-footer__links a:hover {
+	opacity: 1;
+	text-shadow: 0 0 12px rgba(255, 255, 255, .25);
+}
+.site-footer__note {
+	font-size: .95rem;
+	opacity: .8;
+	z-index: 1;
+}
+@media (max-width: 640px) {
+	.site-footer {
+		align-items: flex-start;
+	}
 }

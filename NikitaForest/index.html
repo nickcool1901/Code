@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<style>
-      /* Стили для салюта */
+  <style>
+      /* ?o�'?n?>?n ???>�? �??o?>�?�'?o */
       .firework {
         position: absolute;
         width: 10px;
@@ -35,100 +35,110 @@ function fireworks(event) {
 }
   </script>
 
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>nickcool</title>
-	<link rel="stylesheet" href="css/main.css">
-	<script src="libs/gsap/gsap.min.js" type="text/javascript" defer></script>
-	<script src="libs/gsap/ScrollTrigger.min.js" type="text/javascript" defer></script>
-	<script src="libs/gsap/ScrollSmoother.min.js" type="text/javascript" defer></script>
-	<script src="js/app.js" type="text/javascript" defer></script>
-
-	<script>
-		// Получаем ссылки на кнопку и счетчик
-const myButton = document.getElementById('myButton');
-const counter = document.getElementById('counter');
-
-// Устанавливаем начальное значение счетчика
-let count = 0;
-
-// Обрабатываем событие клика на кнопке
-button.addEventListener('click', () => {
-  // Увеличиваем значение счетчика и обновляем текст в элементе счетчика
-  count++;
-  counter.textContent = count;
-  counter.innerHTML = count;
-});
-	</script>
-	
-
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nickcool</title>
+  <link rel="stylesheet" href="css/main.css">
+  <script src="libs/gsap/gsap.min.js" type="text/javascript" defer></script>
+  <script src="libs/gsap/ScrollTrigger.min.js" type="text/javascript" defer></script>
+  <script src="libs/gsap/ScrollSmoother.min.js" type="text/javascript" defer></script>
+  <script src="js/app.js" type="text/javascript" defer></script>
 </head>
 <body>
-	<nav>
-		<ul>
-			<li><a>Menu</a>
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="index1.html">About me</a></li>
-					<li><a href="index2.html" target="_blank">Contacts</a></li>
-				</ul>
-			</li>
-		</ul>
-		<button class="btnLogin-popup">Login</button>
-	</nav>
-	<div class="wrapper">
-		<div class="content">
-			<header class="main-header">
-				<div class="layers">
-					<button id="myButton" style="background-image: url(../img/flame.jpg);"><b></b></button>
-					<div class="layer__header">
-						<div class="layers__caption">Made by:</div>
-						<div class="layers__title">I play WOW! First CI/CD</div>
-						<div class="layers__title">2 LSP</div>
-					</div>
-					<div class="layer layers__base" style="background-image: url(img/layer-base.png);"></div>
-					<div class="layer layers__middle" style="background-image: url(img/layer-middle.png);"></div>
-					<div class="layer layers__front" style="background-image: url(img/layer-front.png);"></div>
-				</div>
-			</header>
-			<article class="main-article" style="background-image: url(img/dungeon.jpg);">
-				<div class="main-article__content">
-					<div class="card">
-						<div class="card-background"></div>
-						<div class="card-content">
-							
-					<h2 class="main-article__header">To be continued</h2>
-					<p class="main-article__paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis error provident dignissimos facere. Repellendus tempore autem qui! Quia magnam tempora esse id necessitatibus corrupti mollitia expedita sapiente cum rerum, ut dicta laboriosam!</p>
-					</div>
-				</div>
+  <nav>
+    <ul>
+      <li><a>Menu</a>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index1.html">About me</a></li>
+          <li><a href="index2.html" target="_blank">Contacts</a></li>
+        </ul>
+      </li>
+    </ul>
+    <button class="btnLogin-popup">Login</button>
+  </nav>
 
-				<button class="button__white" style="text-align: center; font-size: 15px;" onclick="fireworks(event)">Click me</button>
+  <div id="flame" class="floating-flame" aria-hidden="true"></div>
 
-				</div>
+  <div class="wrapper">
+    <div class="content">
+      <header class="main-header">
+        <div class="layers">
+          <div class="layer__header">
+            <div class="layers__caption">Made by:</div>
+            <div class="layers__title">I play WOW! First CI/CD</div>
+            <div class="layers__title">2 LSP</div>
+          </div>
+          <div class="layer layers__base" style="background-image: url(img/layer-base.png);"></div>
+          <div class="layer layers__middle" style="background-image: url(img/layer-middle.png);"></div>
+          <div class="layer layers__front" style="background-image: url(img/layer-front.png);"></div>
+        </div>
+      </header>
+      <article class="main-article" style="background-image: url(img/dungeon.jpg);">
+        <div class="main-article__content">
+          <div class="card">
+            <div class="card-background"></div>
+            <div class="card-content">
+              <h2 class="main-article__header">To be continued</h2>
+              <p class="main-article__paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis error provident dignissimos facere. Repellendus tempore autem qui! Quia magnam tempora esse id necessitatibus corrupti mollitia expedita sapiente cum rerum, ut dicta laboriosam!</p>
+            </div>
+          </div>
 
-				<div class="copy">© I play WOW! First CI/DC</div>
+          <button class="button__white" style="text-align: center; font-size: 15px;" onclick="fireworks(event)">Click me</button>
 
-			</article>
-		</div>
-	</div>
+        </div>
+      </article>
+    </div>
+  </div>
 
+  <footer class="site-footer">
+    <div class="site-footer__glow" aria-hidden="true"></div>
+    <div class="site-footer__brand">I play WOW!</div>
+    <div class="site-footer__links">
+      <a href="index.html">Home</a>
+      <a href="index1.html">About me</a>
+      <a href="index2.html">Contacts</a>
+    </div>
+    <div class="site-footer__note">Click anywhere to move the flame. Stay curious.</div>
+  </footer>
 
-	<script>
-		const button = document.getElementById('myButton');
-		// Устанавливаем случайные начальные координаты для кнопки
-		button.style.top = Math.random() * window.innerHeight + 'px';
-		button.style.left = Math.random() * window.innerWidth + 'px';
-		// Обрабатываем событие клика на кнопке
-		button.addEventListener('click', () => {
-			// Генерируем случайные координаты для кнопки
-			const x = Math.random() * window.innerWidth;
-			const y = Math.random() * window.innerHeight;
-			// Устанавливаем новые координаты кнопки
-			button.style.top = y + 'px';
-			button.style.left = x + 'px';
-		});
-			</script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const flame = document.getElementById('flame');
+      if (!flame) return;
+
+      const placeFlame = (x, y) => {
+        const offsetX = flame.offsetWidth / 2;
+        const offsetY = flame.offsetHeight / 2;
+        flame.style.left = `${x - offsetX}px`;
+        flame.style.top = `${y - offsetY + window.scrollY}px`;
+      };
+
+      const centerFlame = () => {
+        placeFlame(window.innerWidth * 0.5, window.innerHeight * 0.35);
+      };
+
+      const handlePointer = (clientX, clientY) => {
+        placeFlame(clientX, clientY);
+      };
+
+      centerFlame();
+
+      document.addEventListener('click', (event) => {
+        handlePointer(event.clientX, event.clientY);
+      });
+
+      document.addEventListener('touchstart', (event) => {
+        const touch = event.touches[0];
+        if (touch) {
+          handlePointer(touch.clientX, touch.clientY);
+        }
+      }, { passive: true });
+
+      window.addEventListener('resize', centerFlame);
+    });
+  </script>
 
 </body>
 </html>

@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="stylesheet" href="css/main.css">
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>About me</title>
-	<script src="libs/gsap/gsap.min.js" defer></script>
-	<script src="libs/gsap/ScrollTrigger.min.js" defer></script>
-	<script src="libs/gsap/ScrollSmoother.min.js" defer></script>
-	<script src="js/app.js" defer></script>
+  <link rel="stylesheet" href="css/main.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About me</title>
+  <script src="libs/gsap/gsap.min.js" defer></script>
+  <script src="libs/gsap/ScrollTrigger.min.js" defer></script>
+  <script src="libs/gsap/ScrollSmoother.min.js" defer></script>
+  <script src="js/app.js" defer></script>
 </head>
-<body>
-	<div class="layer layers__front" style="background-image: url(img/cave.jpg);"></div>
-	<nav>
-		<ul>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="index1.html">About me</a></li>
-			<li><a href="index2.html">Contacts</a></li>
-		</ul>
-	</nav>
-		<h2 style="color: white; margin-left: 50px; margin-top: 10px; " class="main-article__header">About me:</h2>
-		<p style="color: white; margin-left: 50px;" class="main-article__paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis error provident dignissimos facere. Repellendus tempore autem qui! Quia magnam tempora esse id necessitatibus corrupti mollitia expedita sapiente cum rerum, ut dicta laboriosam!</p>
+<body class="simple-page">
+  <div class="page-background" style="background-image: url(img/cave.jpg);"></div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index1.html">About me</a></li>
+      <li><a href="index2.html">Contacts</a></li>
+    </ul>
+  </nav>
+  <main class="page-shell">
+    <h2 style="color: white; margin-left: 0; margin-top: 10px;" class="main-article__header">About me:</h2>
+    <p style="color: white; margin-left: 0;" class="main-article__paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis error provident dignissimos facere. Repellendus tempore autem qui! Quia magnam tempora esse id necessitatibus corrupti mollitia expedita sapiente cum rerum, ut dicta laboriosam!</p>
+  </main>
+  <footer class="site-footer">
+    <div class="site-footer__glow" aria-hidden="true"></div>
+    <div class="site-footer__brand">I play WOW!</div>
+    <div class="site-footer__links">
+      <a href="index.html">Home</a>
+      <a href="index1.html">About me</a>
+      <a href="index2.html">Contacts</a>
+    </div>
+    <div class="site-footer__note">New background stays visible even on mobile.</div>
+  </footer>
 </body>
 </html>
