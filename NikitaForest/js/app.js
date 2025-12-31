@@ -14,14 +14,11 @@ function initFlame() {
   const flame = document.getElementById('flame');
   if (!flame) return;
 
-  const blockedSelectors = 'nav, footer, button, a, input, textarea, select, label, .site-footer, .page-shell, .main-article__content, .layers, .layer__header, .card, .button__white, .block-flame';
-  const blockedTags = new Set(['P', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'SPAN', 'STRONG', 'EM', 'LI', 'UL', 'OL']);
-
-  const shouldIgnore = (target) => {
-    if (!target) return true;
-    if (target === flame) return false;
-    if (blockedTags.has(target.tagName)) return true;
-    return !!target.closest(blockedSelectors);
+  const randomPoint = () => {
+    const padding = 40;
+    const x = Math.random() * (window.innerWidth - padding * 2) + padding;
+    const y = Math.random() * (window.innerHeight - padding * 2) + padding;
+    return { x, y };
   };
 
   const place = (x, y) => {
@@ -31,24 +28,32 @@ function initFlame() {
     flame.style.top = `${y - offsetY}px`;
   };
 
-  const centerFlame = () => {
-    place(window.innerWidth * 0.5, window.innerHeight * 0.4);
+  const placeRandom = () => {
+    const { x, y } = randomPoint();
+    place(x, y);
   };
 
-  document.addEventListener('click', (event) => {
-    if (event.target !== flame && shouldIgnore(event.target)) return;
-    place(event.clientX, event.clientY);
+  const showFlame = () => {
+    flame.style.display = 'block';
+    placeRandom();
+  };
+
+  const trigger = document.querySelector('.button__white');
+  if (trigger) {
+    trigger.addEventListener('click', showFlame);
+  }
+
+  flame.addEventListener('click', placeRandom);
+  flame.addEventListener('touchstart', (event) => {
+    event.preventDefault();
+    placeRandom();
+  }, { passive: false });
+
+  window.addEventListener('resize', () => {
+    if (flame.style.display === 'block') {
+      placeRandom();
+    }
   });
-
-  document.addEventListener('touchstart', (event) => {
-    const touch = event.touches[0];
-    if (!touch) return;
-    if (event.target !== flame && shouldIgnore(event.target)) return;
-    place(touch.clientX, touch.clientY);
-  }, { passive: true });
-
-  window.addEventListener('resize', centerFlame);
-  centerFlame();
 }
 
 document.addEventListener('DOMContentLoaded', () => {

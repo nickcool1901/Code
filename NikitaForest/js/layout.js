@@ -1,24 +1,39 @@
 const headerFallback = `
-<nav class="block-flame">
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="index1.html">About me</a></li>
-    <li><a href="index2.html">Contacts</a></li>
-  </ul>
-  <button class="btnLogin-popup">Login</button>
-</nav>
+<header class="site-header block-flame">
+  <div class="site-header__bar">
+    <a class="site-header__brand" href="index.html" aria-label="Home">NikitaForest</a>
+    <nav class="site-header__nav">
+      <a href="index1.html">About me</a>
+      <a href="index2.html">Contacts</a>
+    </nav>
+    <button class="btnLogin-popup">Login</button>
+  </div>
+</header>
 `;
 
 const footerFallback = `
 <footer class="site-footer block-flame">
   <div class="site-footer__glow" aria-hidden="true"></div>
-  <div class="site-footer__brand">I play WOW!</div>
-  <div class="site-footer__links">
-    <a href="index.html">Home</a>
-    <a href="index1.html">About me</a>
-    <a href="index2.html">Contacts</a>
+  <div class="site-footer__content">
+    <div class="site-footer__col">
+      <div class="site-footer__brand">NIKITAFOREST</div>
+      <p class="site-footer__text">Crafting things I enjoy. Ping me if you want to chat.</p>
+    </div>
+    <div class="site-footer__col">
+      <div class="site-footer__links">
+        <a href="index.html">Home</a>
+        <a href="index1.html">About me</a>
+        <a href="index2.html">Contacts</a>
+      </div>
+    </div>
+    <div class="site-footer__col">
+      <div class="site-footer__heading">Contacts</div>
+      <ul class="site-footer__list">
+        <li><a href="+37124665552">+371 2466 5552</a></li>
+        <li><a href="https://www.instagram.com/nekijtak/" target="_blank" rel="noopener">Instagram</a></li>
+      </ul>
+    </div>
   </div>
-  <div class="site-footer__note">Click the flame to move it. Login coming soon.</div>
 </footer>
 `;
 

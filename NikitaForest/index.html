@@ -1,39 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <style>
-      .firework {
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        background-color: red;
-        border-radius: 50%;
-        animation: explode 2s ease-out forwards;
-      }
-
-      @keyframes explode {
-        0% { opacity: 1; }
-        100% { transform: scale(2.5); opacity: 0; }
-      }
-    </style>
-  <script>
-function fireworks(event) {
-  const firework = document.createElement('span');
-  firework.classList.add('firework');
-  firework.style.left = event.pageX + 'px';
-  firework.style.top = event.pageY + 'px';
-  document.body.appendChild(firework);
-  setTimeout(() => {
-    firework.remove();
-  }, 1000);
-}
-  </script>
-
+  <link rel="stylesheet" href="css/main.css">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>nickcool</title>
-  <link rel="stylesheet" href="css/main.css">
   <script src="libs/gsap/gsap.min.js" type="text/javascript" defer></script>
   <script src="libs/gsap/ScrollTrigger.min.js" type="text/javascript" defer></script>
   <script src="libs/gsap/ScrollSmoother.min.js" type="text/javascript" defer></script>
@@ -41,7 +13,18 @@ function fireworks(event) {
   <script src="js/app.js" type="text/javascript" defer></script>
 </head>
 <body>
-  <div data-include="header"></div>
+  <div data-include="header">
+    <header class="site-header block-flame">
+      <div class="site-header__bar">
+        <a class="site-header__brand" href="index.html" aria-label="Home">NikitaForest</a>
+        <nav class="site-header__nav">
+          <a href="index1.html">About me</a>
+          <a href="index2.html">Contacts</a>
+        </nav>
+        <button class="btnLogin-popup">Login</button>
+      </div>
+    </header>
+  </div>
 
   <div id="flame" class="floating-flame" aria-hidden="true"></div>
 
@@ -73,9 +56,8 @@ function fireworks(event) {
 
         </div>
       </article>
+      <div data-include="footer"></div>
     </div>
   </div>
-
-  <div data-include="footer"></div>
 </body>
 </html>
