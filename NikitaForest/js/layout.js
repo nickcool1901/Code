@@ -1,3 +1,27 @@
+const headerFallback = `
+<nav class="block-flame">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index1.html">About me</a></li>
+    <li><a href="index2.html">Contacts</a></li>
+  </ul>
+  <button class="btnLogin-popup">Login</button>
+</nav>
+`;
+
+const footerFallback = `
+<footer class="site-footer block-flame">
+  <div class="site-footer__glow" aria-hidden="true"></div>
+  <div class="site-footer__brand">I play WOW!</div>
+  <div class="site-footer__links">
+    <a href="index.html">Home</a>
+    <a href="index1.html">About me</a>
+    <a href="index2.html">Contacts</a>
+  </div>
+  <div class="site-footer__note">Click the flame to move it. Login coming soon.</div>
+</footer>
+`;
+
 function loadPartials() {
   const includes = document.querySelectorAll('[data-include]');
 
@@ -5,16 +29,20 @@ function loadPartials() {
     const name = node.getAttribute('data-include');
     if (!name) return;
 
-    fetch(`partials/${name}.html`)
-      .then((res) => res.text())
+    const fallback = name === 'header' ? headerFallback : name === 'footer' ? footerFallback : '';
+    const url = `partials/${name}.html`;
+
+    fetch(url)
+      .then((res) => {
+        if (!res.ok) throw new Error(res.statusText);
+        return res.text();
+      })
+      .catch(() => fallback)
       .then((html) => {
         node.innerHTML = html;
         if (name === 'header') {
           wireLogin(node);
         }
-      })
-      .catch((err) => {
-        console.error(`Failed to load partial "${name}"`, err);
       });
   });
 }

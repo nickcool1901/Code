@@ -14,10 +14,14 @@ function initFlame() {
   const flame = document.getElementById('flame');
   if (!flame) return;
 
-  const blockedSelectors = 'nav, footer, button, a, input, textarea, select, label, .site-footer, .page-shell, .main-article__content, .layers, .layer__header, .card, .button__white';
+  const blockedSelectors = 'nav, footer, button, a, input, textarea, select, label, .site-footer, .page-shell, .main-article__content, .layers, .layer__header, .card, .button__white, .block-flame';
+  const blockedTags = new Set(['P', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'SPAN', 'STRONG', 'EM', 'LI', 'UL', 'OL']);
 
   const shouldIgnore = (target) => {
-    return !target || target.closest(blockedSelectors);
+    if (!target) return true;
+    if (target === flame) return false;
+    if (blockedTags.has(target.tagName)) return true;
+    return !!target.closest(blockedSelectors);
   };
 
   const place = (x, y) => {
@@ -32,14 +36,14 @@ function initFlame() {
   };
 
   document.addEventListener('click', (event) => {
-    if (shouldIgnore(event.target)) return;
+    if (event.target !== flame && shouldIgnore(event.target)) return;
     place(event.clientX, event.clientY);
   });
 
   document.addEventListener('touchstart', (event) => {
     const touch = event.touches[0];
     if (!touch) return;
-    if (shouldIgnore(event.target)) return;
+    if (event.target !== flame && shouldIgnore(event.target)) return;
     place(touch.clientX, touch.clientY);
   }, { passive: true });
 
