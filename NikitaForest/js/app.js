@@ -83,7 +83,42 @@ function initFlame() {
 
   const trigger = document.querySelector('.button__white');
   if (trigger) {
-    trigger.addEventListener('click', showFlame);
+    let pointerStart = null;
+
+    trigger.addEventListener('pointerdown', (event) => {
+      pointerStart = {
+        x: event.clientX,
+        y: event.clientY,
+        time: performance.now()
+      };
+    });
+
+    trigger.addEventListener('pointerup', (event) => {
+      if (!pointerStart) return;
+
+      const movedX = Math.abs(event.clientX - pointerStart.x);
+      const movedY = Math.abs(event.clientY - pointerStart.y);
+      const duration = performance.now() - pointerStart.time;
+      const isScrollGesture = movedX > 10 || movedY > 10 || duration > 600;
+
+      if (!isScrollGesture) {
+        event.preventDefault();
+        showFlame();
+      }
+
+      pointerStart = null;
+    });
+
+    trigger.addEventListener('pointercancel', () => {
+      pointerStart = null;
+    });
+
+    trigger.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        showFlame();
+      }
+    });
   }
 
   flame.addEventListener('click', placeRandom);

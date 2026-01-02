@@ -166,6 +166,15 @@ body {
 	margin-left: 50px;
 	color: white;
 }
+.main-article__content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 22px;
+	padding: 24px 16px;
+	position: relative;
+	z-index: 30;
+}
 .content {
 	will-change: transform;
 }
@@ -189,7 +198,9 @@ body {
 	text-decoration: none;
 	text-align: center;
 	padding: 10px;
-	position: static;
+	position: relative;
+	z-index: 20;
+	touch-action: manipulation;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
