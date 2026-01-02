@@ -76,6 +76,21 @@ function initFlame() {
     place(x, y);
   };
 
+  const spawnSplash = (event) => {
+    const container = document.querySelector('.content') || document.body;
+    const rect = container.getBoundingClientRect();
+    const point = event && (event.touches?.[0] || event.changedTouches?.[0] || event);
+    const x = point ? point.clientX - rect.left : rect.width / 2;
+    const y = point ? point.clientY - rect.top : rect.height / 2;
+
+    const splash = document.createElement('div');
+    splash.className = 'water-splash';
+    splash.style.left = `${x}px`;
+    splash.style.top = `${y}px`;
+    container.appendChild(splash);
+    splash.addEventListener('animationend', () => splash.remove());
+  };
+
   const showFlame = () => {
     flame.style.display = 'block';
     placeRandom();
@@ -89,8 +104,17 @@ function initFlame() {
       pointerStart = {
         x: event.clientX,
         y: event.clientY,
+        scroll: window.scrollY,
         time: performance.now()
       };
+    });
+
+    trigger.addEventListener('pointermove', () => {
+      if (!pointerStart) return;
+      const scrolled = Math.abs(window.scrollY - pointerStart.scroll) > 6;
+      if (scrolled) {
+        pointerStart.moved = true;
+      }
     });
 
     trigger.addEventListener('pointerup', (event) => {
@@ -99,7 +123,8 @@ function initFlame() {
       const movedX = Math.abs(event.clientX - pointerStart.x);
       const movedY = Math.abs(event.clientY - pointerStart.y);
       const duration = performance.now() - pointerStart.time;
-      const isScrollGesture = movedX > 10 || movedY > 10 || duration > 600;
+      const scrolled = Math.abs(window.scrollY - pointerStart.scroll) > 6;
+      const isScrollGesture = pointerStart.moved || movedX > 10 || movedY > 10 || scrolled || duration > 600;
 
       if (!isScrollGesture) {
         event.preventDefault();
@@ -121,9 +146,13 @@ function initFlame() {
     });
   }
 
-  flame.addEventListener('click', placeRandom);
+  flame.addEventListener('click', (event) => {
+    spawnSplash(event);
+    placeRandom();
+  });
   flame.addEventListener('touchstart', (event) => {
     event.preventDefault();
+    spawnSplash(event);
     placeRandom();
   }, { passive: false });
 

@@ -220,17 +220,51 @@ body {
 	width: 95px;
 	height: 65px;
 	z-index: 12000;
-	background-image: url(../img/flame.jpg);
-	background-size: cover;
+	background-image: url(../img/flame.svg);
+	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
+	background-color: transparent;
 	pointer-events: auto;
 	cursor: pointer;
 	filter: drop-shadow(0 0 12px rgba(255, 119, 41, .9));
-	box-shadow: 0 0 14px rgba(255, 183, 94, 0.55);
-	border: 1px solid rgba(255, 196, 120, 0.5);
+	box-shadow: none;
+	border: none;
 	display: none;
 	transition: left .6s ease-out, top .6s ease-out;
+}
+.water-splash {
+	position: absolute;
+	width: 26px;
+	height: 26px;
+	left: 0;
+	top: 0;
+	border-radius: 50%;
+	transform: translate(-50%, -50%) scale(0.7);
+	background: radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.9), rgba(129, 206, 255, 0.6));
+	box-shadow:
+		0 0 0 2px rgba(110, 199, 255, 0.6),
+		0 0 12px rgba(110, 199, 255, 0.35);
+	opacity: 0.9;
+	pointer-events: none;
+	z-index: 12010;
+	mix-blend-mode: screen;
+	animation: splash-ripple .9s ease-out forwards;
+}
+
+@keyframes splash-ripple {
+	0% {
+		transform: translate(-50%, -50%) scale(0.7);
+		opacity: 0.9;
+	}
+	50% {
+		transform: translate(-50%, -50%) scale(1.6);
+		opacity: 0.55;
+	}
+	100% {
+		transform: translate(-50%, -50%) scale(2.2);
+		opacity: 0;
+	}
 }
 .card {
 	align-items: center;
