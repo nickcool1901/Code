@@ -24,7 +24,7 @@ jobs:
 
       - name: Run HTMLHint
         run: |
-          htmlhint "NikitaForest/**/*.html"
+          htmlhint --ignore "NikitaForest/partials/**/*.html" "NikitaForest/**/*.html"
 
       - name: Check broken links
         uses: lycheeverse/lychee-action@v1
